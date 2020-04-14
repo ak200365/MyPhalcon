@@ -30,7 +30,9 @@ RUN set -xe && \
 
 # Подключаем модуль Apache Rewrite
 RUN cd /etc/apache2/mods-enabled && \
-    ln -s ../mods-available/rewrite.load
+    ln -s ../mods-available/rewrite.load && \
+    usermod -u 1000 www-data && \
+    groupmod -g 1000 www-data
     
 # RUN docker-php-ext-install mysqli
 RUN docker-php-ext-install pdo pdo_mysql
