@@ -4,6 +4,8 @@
 FROM mysql:5.7
 # FROM mysql:5.7.16
 
+COPY my.cnf /etc/mysql/
+
 RUN usermod -u 1000 www-data && \
     groupmod -g 1000 www-data && \
     chmod 444 /etc/mysql/my.cnf
