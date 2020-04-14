@@ -3,6 +3,7 @@ My First Phalcon
 
 ----------------------------------------------------------------------------------
 
+	$ git clone https://github.com/ak200365/MyPhalcon.git
 	$ cd MyPhalcon
 	$ docker-compose up --build
 
