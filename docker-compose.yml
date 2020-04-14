@@ -31,7 +31,7 @@ services:
         volumes: 
             - ./dat/mysql:/var/lib/mysql
             - ./log/mysql:/var/log/mysql
-            - ./bin/my.cnf:/etc/mysql/my.cnf
+        #    - ./bin/my.cnf:/etc/mysql/my.cnf
 
     # pma:
     #     image: phpmyadmin/phpmyadmin
