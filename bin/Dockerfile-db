@@ -2,8 +2,11 @@
 
 # Используем MySQL 5.7 в качестве базового образа
 FROM mysql:5.7
-
 # FROM mysql:5.7.16
+
+RUN usermod -u 1000 www-data && \
+    groupmod -g 1000 www-data && \
+    chmod 444 /etc/mysql/my.cnf
 
 # Копируем скрипты для создания исходной базы данных
 COPY init.sql /docker-entrypoint-initdb.d/
