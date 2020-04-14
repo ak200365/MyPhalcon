@@ -1,0 +1,18 @@
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-12 px-0">
+    	<h1 class="display-4 font-italic">
+    		c:<?php echo $this->view->getControllerName(); ?>
+    		a:<?php echo $this->view->getActionName(); ?>
+    	</h1>
+    	<p class="lead my-3">
+    		<?php echo $this->view->getViewsDir(); ?>
+    		<?php echo $this->view->getLayout(); ?>
+    		<?php echo $this->view->getMainView(); ?>
+    	</p>
+    	<br><br>
+    	<p class="lead mb-0">
+    		<?php echo $this->tag->linkTo(['signup', 'Sign Up Today', 'class' => 'btn btn-sm btn-outline-secondary']); ?>
+    	</p>
+    </div>
+
+</div>

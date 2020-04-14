@@ -1,0 +1,27 @@
+<div class="row centered-form">
+    <div class="panel panel-default" style="margin: auto;">
+        <h3>Sign in using this form</h3>
+
+        <?php echo $this->tag->form("index/signin"); ?>
+
+        <p>
+            <label for="login">Login</label><br>
+            <?php echo $this->tag->textField(["login", "placeholder" => "admin, user, manager", "class" => "form-control input-sm"]); ?>
+        </p>
+        <p>
+            <label for="password">Password</label><br>
+            <?php echo $this->tag->passwordField(["password", "placeholder" => "admin, user, manage", "class" => "form-control input-sm"]); ?>
+            <p>
+            </p>
+            <br>
+            <?php echo $this->tag->submitButton(["Sign In", "class" => "btn btn-info btn-block"]); ?>
+        </p>
+        <p>
+            or <?php echo $this->tag->linkTo("index/register", "Register now"); ?>
+        </p>
+
+    </form>
+
+    <br><?php echo $this->flash->output(); ?>
+</div>
+</div>

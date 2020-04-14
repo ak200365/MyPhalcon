@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+    web:
+        build:
+            context: ./bin
+            dockerfile: ./Dockerfile-web
+        container_name: wbc-web
+        ports:
+            - "8080:80"
+        volumes:
+            - ./wbc:/var/www/html
+            # - ./mvc:/var/www/html
+            - ./log/apache2:/var/log/apache2
+            - ./log/xdebug:/var/log/xdebug/
+        links:
+            - mysql
+        # environment:
+        #     XDEBUG_CONFIG: "remote_host=172.17.0.1 remote_enable=1"
+        #     PHP_IDE_CONFIG: "serverName=docker"
+
+    mysql:
+        build:
+            context: ./bin
+            dockerfile: ./Dockerfile-db
+        container_name: wbc-db
+        environment:
+            MYSQL_ROOT_PASSWORD: "tiger"
+        # ports:
+        #     - "3307:3306"
+        volumes: 
+            - ./dat/mysql:/var/lib/mysql
+            - ./log/mysql:/var/log/mysql
+            - ./bin/my.cnf:/etc/mysql/my.cnf
+
+    # pma:
+    #     image: phpmyadmin/phpmyadmin
+    #     container_name: 'wbc-pma'
+    #     links:
+    #         - mysql
+    #     environment:
+    #         PMA_HOST: mysql
+    #         PMA_PORT: 3306
+    #     ports:
+    #         - '8088:80'
+    #     volumes: 
+    #         - /sessions

@@ -1,0 +1,70 @@
+<div class="row centered-form">
+    <div class="panel panel-default" style="margin: auto;">
+        <div class="panel-heading">
+            <h3 class="panel-title">Please sign up. <small>It's free!</small></h3>
+        </div>
+        <div class="panel-body">
+            <?php echo $this->tag->form(["index/register", 'role' => 'form']); ?>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <?php
+                        echo $this->tag->textField(["login",
+                            "placeholder" => "Login",
+                            "class" => "form-control input-sm"]);
+                        ?>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <?php
+                        echo $this->tag->textField(["name",
+                            "placeholder" => "Name",
+                            "class" => "form-control input-sm"]);
+                        ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+				<?php
+				echo $this->tag->textField(["email",
+				    "placeholder" => "Email Address",
+				    "class" => "form-control input-sm"]);
+				?>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <?php
+                        echo $this->tag->selectStatic([
+                            'role',
+                            [
+                                'user' => 'User',
+                                'admin' => 'Admin',
+                                'mngr' => 'Manager'
+                            ],
+                            'useEmpty' => true,
+                            'emptyText' => 'Select User Role',
+                            'emptyValue' => 'user',
+                            "class" => "form-control select-sm"]);
+                        ?>
+                    </div>
+                </div>
+            </div>
+
+            <input type="submit" value="Register" class="btn btn-info btn-block">
+
+            </form>
+            <br><?php echo $this->flash->output(); ?>
+            <br><br><br>
+        </div>
+
+    </div>
+</div>

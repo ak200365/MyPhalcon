@@ -1,0 +1,13 @@
+    <div class="col-12 px-0">
+      <h1 class="display-4 font-italic">Greeting</h1>
+      <p class="lead my-3">Should you like to editing?</p>
+      <br><br>
+      <p class="lead my-3">
+        <?php echo $this->tag->linkTo([
+         'index/signin',
+         'Signin with Admin role',
+         'class' => 'btn btn-sm btn-outline-secondary'
+       ]);
+       ?>
+     </p>
+   </div>
